@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>3-5note | terry kim blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="초기화 이전에 변수에 접근하려고 하면 reference error가 발생한다. 선언, 초기화까지 되야됨. ajax request를 통해서 서버에 요청을 한다. response를 받으면 그걸로 돔을 변화시킨다. 서버는 요청이 들어오는지 안들어오는지 감시하고있다가 요청이 들어오면 일을한다. 서버의 기능정적 파일의 제공(만들어져있는 파일)REST API 정의,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3-5note">
+<meta property="og:url" content="https://chamchii.github.io/2018/04/30/3-5note/index.html">
+<meta property="og:site_name" content="terry kim blog">
+<meta property="og:description" content="초기화 이전에 변수에 접근하려고 하면 reference error가 발생한다. 선언, 초기화까지 되야됨. ajax request를 통해서 서버에 요청을 한다. response를 받으면 그걸로 돔을 변화시킨다. 서버는 요청이 들어오는지 안들어오는지 감시하고있다가 요청이 들어오면 일을한다. 서버의 기능정적 파일의 제공(만들어져있는 파일)REST API 정의,">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2018-04-30T06:19:02.771Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3-5note">
+<meta name="twitter:description" content="초기화 이전에 변수에 접근하려고 하면 reference error가 발생한다. 선언, 초기화까지 되야됨. ajax request를 통해서 서버에 요청을 한다. response를 받으면 그걸로 돔을 변화시킨다. 서버는 요청이 들어오는지 안들어오는지 감시하고있다가 요청이 들어오면 일을한다. 서버의 기능정적 파일의 제공(만들어져있는 파일)REST API 정의,">
+    
+
+    
+        <link rel="alternate" href="/" title="terry kim blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Terry&#39;s record</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Daily-Records/">Daily Records</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Notes/">Notes</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/">Sports</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/">일상</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/메모/">메모</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/Notes/">Notes</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-3-5note" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        3-5note
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/04/30/3-5note/" class="article-date">
+            <time datetime="2018-04-30T06:18:03.000Z" itemprop="datePublished">2018-04-30</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <ul>
+<li>초기화 이전에 변수에 접근하려고 하면 reference error가 발생한다. 선언, 초기화까지 되야됨.</li>
+<li>ajax request를 통해서 서버에 요청을 한다.</li>
+<li>response를 받으면 그걸로 돔을 변화시킨다.</li>
+<li>서버는 요청이 들어오는지 안들어오는지 감시하고있다가 요청이 들어오면 일을한다.</li>
+<li>서버의 기능<br>정적 파일의 제공(만들어져있는 파일)<br>REST API 정의, 처리<br>REST API: 클라이언트에서 다양한 요청이 온다. 요청을 구별할 수 있어야되고 구별된 요청대로 처리를 달리한다.(사전에 정의해놓는다.)<br>DB<br>JSP는 html을 만드는것<br>자바, 닷넷, 파이선, php,<br>java framework : spring<br>nodejs는 빨리 쉽게 만든다.<br>nodejs는 레퍼런스가 별로 없다. 안정성 측면에서 불안?<br>안정성, 속도 측면에서 야간 단점이 있을수도있다.<br>nodejs에 적합한 application의 종류들이 있다.<br>js: DOM기능이 있어야되는데, 파일 접근 못함<br>nodesj: DOM기능이 필요없다, html, 파일 편집 기능<br>런타임환경: 자바스크립트가 돌아갈 수 있는 환경/<br>저 환경이 있어야 브라우저에서 자바스크립트가 돌아갈 수 있다. (플랫폼)<br>옛날에는 불안해ㅓㅅ 많이 안썼는데 이젠 좀 굳었다.<br>built-in 공유한다.<br>간단한거 만들때는 편리하다,<br>다른회사도 저거 써서 잘했대요가 중요하다.</li>
+<li>non-blocking: 비동기처리한다는얘기 nodejs는 거의 백퍼센트 비동기</li>
+<li>단일 스레드 이벤트 루프 : 장단점이 있다. </li>
+<li>가장 사람이 많이 들어왔을때 버틸수있게해야되는데 다 돈이다. 무작정 늘릴수있다. 안정적으로 처리가 가능해야되는데 단일 스레드는 좋지 않다.</li>
+<li>단일스레드이지만 이벤트루프가 돌기 때문에 고속으로 돌 수 있다.</li>
+<li>cpu연산 많이 하는 것들은 nodejs는 쥐약이다.</li>
+<li>아주 간단한 io를 다량으로 하는 것들이 nodejs에 좋다.</li>
+<li>sns 카카오 같은 것.</li>
+<li>한번 처리가 무거운 것들은 적합하지 않다. 그건 멀티스레드가 도는 서버랭기지를 쓰는게좋다.</li>
+<li>socketio를 쓰면 채팅을 쉽게 만든다.</li>
+<li>클라이언트가 요청안해도 서버가 클라이언트한테 일을 해주는거를 socketio가 도와준다. pwa</li>
+<li>nodejs LTS vs Current<br>LTS : 안정된버전, active</li>
+<li>nodejs버전업 하는법<br>프로젝트가 동시에 진행되는데 nodejs 버전이 다를수있다.<br>그때그때 바꾸는걸 가능하게 해주는 툴이 있다.(nvm, n)<br>npm은 예전에 깐걸 우리가 지웠어도 캐시를 갖고있을 수 있다.</li>
+<li>repl은 브라우저에서 돌아가는 코드인지 테스트할수있게해줌</li>
+<li>nodejs는 commonJS스펙을 선택해서 독자적으로발전시켰다.</li>
+<li>require : import라고 생각하면된다.<br>파일 경로 안써주면 빌트인 모듈이라고 보면된다.<br>nodejs가 어디있는지 다 안다.<br>const http = require(‘http’) : 동기방식이다.<br>amd는 비동기로 부른다.<br>commonJS는 동기로 부른다.<br>http가 없으면 그 이후 처리는 안된다. 그래서 선행시켜야한다.<br>서버는 한번 부팅시켜논이후에 계속 유지한다.<br>모듈 조립을 동기처리를 해서 10분이 걸려도 어차피 처음 킬때빼고는 갠찮다.<br>request, response : createServer가 호출할때 request객체랑 response객체를 담아준다.<br>콜백함수에 매개변수를 정의했다는것은,<br>ajax 콜할때 리케스트 메시지를 날린다.<br>서버가 받아서 쓰기 편한 방식으로 request객체를 만들고 안에다 담는다.<br>response메시지를 만들기 위한 객체가 response객체<br>response.end(‘Hello world’) : response 메시지를 만들어서 send한다.<br>listen을 실행시키면 서버가 기동하는데 3000번 포트를 쓰겠다.</li>
+<li>버전 다르게 까려면 @1.0.0</li>
+<li>dependencies : npm i 하면 깔린다, 서버에도 따라갈 애들, 쟤네가 있어야 돈다.</li>
+<li>devDependencies : 서버에는 안따라간다. </li>
+<li>major 숫자가 바뀌면 상호호환되지 않는것이 있다.</li>
+<li>minor 버전이 올라가면 호환성은 보장된다. 예전 버전이랑</li>
+<li>원주율 쓰는 exports :  자유 변수 쓰려고 함수로 감쌈</li>
+<li>정적 파일을 요구할때<br>example.com 이라고만 요청을 보내도 기본적으로 웹서버는 index.hmtl을 보내준다.<br>require(‘./module) index.js없으면 에러</li>
+<li>express는 어떻게 정형화 해야될지 애매하다. 프리하게 내비둬서 더 애매하다</li>
+<li>그래서 scafold를 만들어주는 툴이있다.(뼈대)</li>
+<li>토큰 많이 쓰는 이유 서버가 여러개 있는 분산환경에서 세션은 불편하다</li>
+<li>require 하는 부분, use로 설정하는 부분, 디비 접속 부분, 라우팅하는 부분,<br>use : middleware</li>
+<li>정적 파일 제공이 app.get보다 우선한다(‘/‘ 라우팅할때)</li>
+<li>콜백 내부에 공통된 처리를 해야될 때 app.all</li>
+<li>seo 확실하게 하려고 할때 서버렌더링을 쓰기도 한다.</li>
+<li><p>app.use : 함수를 호출을 하면서 req객체를 건든다</p>
+</li>
+<li><p>여러개 쓰면 체이닝 개념이다.</p>
+</li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://chamchii.github.io/2018/04/30/3-5note/" data-id="cjglwwze50022fizfx08iv98s" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/04/30/3-6note/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            3-6note
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/04/30/3-1note/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">3-1note</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-27note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-27note/" class="title">3.27note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:18:06.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-26note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-26note/" class="title">3.26note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:15:07.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-20note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
+                            <p class="item-title"><a href="/2018/04/30/3-20note/" class="title">3.20note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:14:31.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-15note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-15note/" class="title">3-15note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:02:17.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-13note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-13note/" class="title">3-13note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:00:47.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">34</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Daily-Records/">Daily Records</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Notes/">Notes</a><span class="category-list-count">32</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/일상/">일상</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/일상/메모/">메모</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2월 2018</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 terry</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://chamchii.github.io/2018/04/30/3-5note/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

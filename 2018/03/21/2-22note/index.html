@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="terry kim blog">
 <meta property="og:description" content="1&amp;lt;div class=&quot;red&quot;&amp;gt;Hi&amp;lt;/div&amp;gt; Hi 빼고 나머지가 메타데이타  ajax를 써서 서버랑 통신할거다 ajax없어도 서버랑 통신할수있다 브라우저가 화면을 전환하는 케이스(리렌더링 / 지우고 새로그린다(깜빡인다)) 백버튼 앞으로버튼 : 히스토리 uri를 바꾸면 화면전환이 일어난다. client의 리퀘스트는 항상 html을 요">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-03-21T14:36:01.506Z">
+<meta property="og:updated_time" content="2018-04-29T12:31:19.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2-22note">
 <meta name="twitter:description" content="1&amp;lt;div class=&quot;red&quot;&amp;gt;Hi&amp;lt;/div&amp;gt; Hi 빼고 나머지가 메타데이타  ajax를 써서 서버랑 통신할거다 ajax없어도 서버랑 통신할수있다 브라우저가 화면을 전환하는 케이스(리렌더링 / 지우고 새로그린다(깜빡인다)) 백버튼 앞으로버튼 : 히스토리 uri를 바꾸면 화면전환이 일어난다. client의 리퀘스트는 항상 html을 요">
@@ -73,7 +73,7 @@
                                     <a class="main-nav-list-link" href="/">홈</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Notes/">Notes</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/">Sports</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/">일상</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/메모/">메모</a></li></ul></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Daily-Records/">Daily Records</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Notes/">Notes</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/">Sports</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/">일상</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/메모/">메모</a></li></ul></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -132,7 +132,7 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    미지정
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/Notes/">Notes</a>
     </h1>
 </div>
                         <div class="main-body-content">
@@ -189,13 +189,13 @@
 <li>json만 보내줄수있는건 아니다. html, css, js도 보낼수있능능력이있다 (response)</li>
 <li>json을 보내면 결국 html을 만들어야된다<br>반대로 만들어서 보낼수도있는데 안하는 이유는 서버에서 일을 적게할수록 돈이 덜든다.<br>파트만 만들어서 보낼 수도 있다.??(서버에서 html만드는것을 서버 렌더링이라고 한다.)<br>클라이언트에서 만드는게 client rendering<br>서버에서 만들면 seo가 좀 잘된다.<br>클라이언트쪽에서 할일이 좀 준다. 단순해진다.<br>경우에 따라서 골라서 하면된다</li>
 <li>로그인 리퀘스트 보낼때 id, pw를 동봉해서 보내야한다.</li>
-<li>JSON Notation  표기법<br>자바스크립트 표기법을 따른다<br>xml 복잡 가독성 구리고 데이터도 커진다<br>json이 표준됐다<br>데이터를 담을 포맷을 의미하고 js object와 거의 비슷하게 생겼다.<br>기본적으로 문자열이다(순수한 텍스트)<br>왜?<br>통신방식은 http protocol, 그 방식이 문자열로 데이터를주고받는다 (정확히는 아스키코드로)<br>그래서 객체로 들고있는 정보를 문자로 바꿔야한다.<br>js에서 property명은 기본적으로 문자열, 따옴표 생략 가능, 홀따,쌍따 다 가능<br>json은 따옴표 생략 불가, 반드시 쌍따옴표<br>json값에 타입이 있다.(넘버, 불리언, 스트링)<br>json은 기본적으로 객체로 변환될 운명인애들<br>JSON이라는 객체의 static 함수 stringify<br>개행하는것도 바이트수 추가되니까 개행없이 만들어줌<br>stringify 3번째 매개변수는 indent 간격 수<br>replacer함수는 필터링함수<br>객체에서 뭘좀빼고보낸다(변형하면서 보낸다)<br>stringify는 왜 배열에서도 동작할까?<br>객체안에 배열이 들어갈 확률이 높기때문에 제공한다.<br>parse : 역직렬화</li>
+<li>JSON Notation  표기법<br>자바스크립트 표기법을 따른다<br>xml 복잡 가독성 구리고 데이터도 커진다<br>json이 표준됐다<br>데이터를 담을 포맷을 의미하고 js object와 거의 비슷하게 생겼다.<br>기본적으로 문자열이다(순수한 텍스트)<br>왜?<br>통신방식은 http protocol, 그 방식은 문자열로 데이터를주고받는다 (정확히는 아스키코드로)<br>그래서 객체로 들고있는 정보를 문자로 바꿔야한다.<br>js에서 property명은 기본적으로 문자열, 따옴표 생략 가능, 홀따,쌍따 다 가능<br>json은 따옴표 생략 불가, 반드시 쌍따옴표<br>json값에 타입이 있다.(넘버, 불리언, 스트링)<br>json은 기본적으로 객체로 변환될 운명인애들<br>JSON이라는 객체의 static 함수 stringify<br>개행하는것도 바이트수 추가되니까 개행없이 만들어줌<br>stringify 3번째 매개변수는 indent 간격 수<br>replacer함수는 필터링함수<br>객체에서 뭘좀빼고보낸다(변형하면서 보낸다)<br>stringify는 왜 배열에서도 동작할까?<br>객체안에 배열이 들어갈 확률이 높기때문에 제공한다.<br>parse : 역직렬화</li>
 <li>ajax를 쓴다는것은<br>XMLHttpRequest라는 객체를 쓴다는 것과 동일<br>얘는 생성자함수다.<br>(new)<br>요청을 생성하고 전송한다.<br>응답이 반환되면 XMLHttpRequest가 받아준다.<br>.open 통신채널을 오픈한다(준비과정이라고 보면됨)<br>첫번째 파라미터: http method, 2번째파라미터: 요청url<br>get방식으로 통신하는데 /users로 통신한다.<br>기본적으로 비동기방식이다.<br>세번째 인자: 비동기로 할거냐아니냐를 지정, 거의쓸일없다<br>xhr.send : request를 보내는거다<br>html의 form은 get, post 두개밖에 없는데 ajax는 수십개가있다.<br>동기방식ㅇ면 서버가 응답할때까지 stop한다<br>open반드시하고 send해야됨</li>
 <li>로드밸런싱 : 웹서버 기계 많이 두고 한가한놈한테 보내는거</li>
 <li>디비가 부하가 가장 많이걸린다. 파일을 열고 쓰고 저장하는게 컴퓨터가 힘들어하는일<br>파일은 텍스트파일일뿐인데 오픈하고, 한글자한글자 쫙읽어서 메모리에 올리는거다<br>그러고 다시 클로즈<br>파일이 크면 메모리를 갑자기 많이 먹는거다.<br>client의 view는 사용자가 데이터를 입력할수있는 유일한 인터페이스이다.<br>view에서 form사용</li>
 <li>서버와 클라이언트사이에서 브릿지 역할을 하는게 controller<br>좌측과 우측의 상태가 동일해야된다.<br>MVC 서버가 model client가 view, 사이에 controller</li>
 </ul>
-<p>최근 트렌드는 CBD : componenet base development<br>angular react view가 다 이방식<br>autofocus<br>autofocus = “autofocus”<br>키와밸류가같으면 축약가능<br>inut tag value<br>요ㅛ소의 property value: 값 변경이 실시간으로 반영됨<br>attribute property의 value : 초기값을 뜻함<br>애프리케이션이 기동되면 데이타베이스에 이전에 저장되어있던 todo를 갖고와서 초기표시를 한다<br>request에서 head에 들어오는 data는 body를 위한 메타데이터다<br>uri에서 서버를 확정할 수 있는 정보가 Host (www.naver.com);<br>host를 안써주면 자기자신을 의미(‘/users’)</p>
+<p>최근 트렌드는 CBD : componenet base development<br>angular react view가 다 이방식<br>autofocus<br>autofocus = “autofocus”<br>key와 value가같으면 축약가능<br>inut tag value<br>요소의 property value: 값 변경이 실시간으로 반영됨<br>attribute property의 value : 초기값을 뜻함<br>애플리케이션이 기동되면 데이타베이스에 이전에 저장되어있던 todo를 갖고와서 초기표시를 한다<br>request에서 head에 들어오는 data는 body를 위한 메타데이터다<br>uri에서 서버를 확정할 수 있는 정보가 Host (www.naver.com);<br>host를 안써주면 자기자신을 의미(‘/users’)</p>
 <p>client는 initial req 할때 html을 받는다<br>html을 서버로부터 받으면 그다음부터 이어지는 통신은 같은 서버한테 요청한다.(동일출처원칙, 호스트를 알고있다)<br>h<br>accept: 내가 받을거의 타입 모든형식 <em>/</em><br>content-type: 내가 보내는거의 타입<br> body를 다른말로 payload라고 한다.<br> get과 post의 차이 : posts는 바디에 담고 get은 uri에 담고<br> res server : apach라는 서버 프로그램<br>get방식은 페이로드가 없다<br>post는 페이로드가있다<br>res.send(null)이면 페이로드가없다는얘기<br>key=value&amp;key=value : x-www-form-urlen~~</p>
 
         </div>
@@ -204,7 +204,7 @@
 
 
 
-    <a data-url="https://chamchii.github.io/2018/03/21/2-22note/" data-id="cjf16xoe00012xjzfpac70gz1" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://chamchii.github.io/2018/03/21/2-22note/" data-id="cjglwwzdj000vfizf7h8jbqny" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -341,6 +341,16 @@
         
 <nav id="article-nav">
     
+        <a href="/2018/04/28/2018-04-28-record/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            2018/04/28 record
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2018/03/18/2-20note/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
@@ -363,7 +373,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/03/21/2-22note/" class="thumbnail">
+                            <a href="/2018/04/30/3-27note/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -375,15 +385,35 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/03/21/2-22note/" class="title">2-22note</a></p>
-                            <p class="item-date"><time datetime="2018-03-21T14:36:01.000Z" itemprop="datePublished">2018-03-21</time></p>
+                            <p class="item-title"><a href="/2018/04/30/3-27note/" class="title">3.27note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:18:06.000Z" itemprop="datePublished">2018-04-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/03/18/2-20note/" class="thumbnail">
+                            <a href="/2018/04/30/3-26note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-26note/" class="title">3.26note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:15:07.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-20note/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -395,15 +425,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
-                            <p class="item-title"><a href="/2018/03/18/2-20note/" class="title">2-20note</a></p>
-                            <p class="item-date"><time datetime="2018-03-18T12:34:56.000Z" itemprop="datePublished">2018-03-18</time></p>
+                            <p class="item-title"><a href="/2018/04/30/3-20note/" class="title">3.20note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:14:31.000Z" itemprop="datePublished">2018-04-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/02/19/2-19note/" class="thumbnail">
+                            <a href="/2018/04/30/3-15note/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -414,16 +444,16 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
-                            <p class="item-title"><a href="/2018/02/19/2-19note/" class="title">2-19note</a></p>
-                            <p class="item-date"><time datetime="2018-02-19T01:25:58.000Z" itemprop="datePublished">2018-02-19</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-15note/" class="title">3-15note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:02:17.000Z" itemprop="datePublished">2018-04-30</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/02/18/2-18note/" class="thumbnail">
+                            <a href="/2018/04/30/3-13note/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -434,29 +464,9 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
-                            <p class="item-title"><a href="/2018/02/18/2-18note/" class="title">2-18note</a></p>
-                            <p class="item-date"><time datetime="2018-02-18T14:46:17.000Z" itemprop="datePublished">2018-02-18</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/18/2-8note/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
-                            <p class="item-title"><a href="/2018/02/18/2-8note/" class="title">2-8note</a></p>
-                            <p class="item-date"><time datetime="2018-02-18T06:21:33.000Z" itemprop="datePublished">2018-02-18</time></p>
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-13note/" class="title">3-13note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:00:47.000Z" itemprop="datePublished">2018-04-30</time></p>
                         </div>
                     </li>
                 
@@ -469,7 +479,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">21</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Notes/">Notes</a><span class="category-list-count">21</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/일상/">일상</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/일상/메모/">메모</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">34</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Daily-Records/">Daily Records</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Notes/">Notes</a><span class="category-list-count">32</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/일상/">일상</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/일상/메모/">메모</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -479,7 +489,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2월 2018</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2월 2018</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 

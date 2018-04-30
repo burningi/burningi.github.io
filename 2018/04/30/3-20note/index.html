@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>3.20note | terry kim blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="" />
+    
+    <meta name="description" content="ngFor directive도 원래는 클래스라서 클래스명은 대문자다 디렉티브 만드는 이유 : 여러개 컴포넌트에서 동일하게 사용되는 뷰에대한 관심사를 가진 기능 툴팁은 대표적인 디렉티브의 대상, 마우스오버하면 설명이 뜬다 todolist를 가져온다, 삭제한다같은 기능은 특정 컴포넌트에서만 쓰지 않고 이곳저곳에서 사용할 확률이높다. 서비스는 싱글톤으로 만들어">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.20note">
+<meta property="og:url" content="https://chamchii.github.io/2018/04/30/3-20note/index.html">
+<meta property="og:site_name" content="terry kim blog">
+<meta property="og:description" content="ngFor directive도 원래는 클래스라서 클래스명은 대문자다 디렉티브 만드는 이유 : 여러개 컴포넌트에서 동일하게 사용되는 뷰에대한 관심사를 가진 기능 툴팁은 대표적인 디렉티브의 대상, 마우스오버하면 설명이 뜬다 todolist를 가져온다, 삭제한다같은 기능은 특정 컴포넌트에서만 쓰지 않고 이곳저곳에서 사용할 확률이높다. 서비스는 싱글톤으로 만들어">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2018-04-30T07:14:31.488Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3.20note">
+<meta name="twitter:description" content="ngFor directive도 원래는 클래스라서 클래스명은 대문자다 디렉티브 만드는 이유 : 여러개 컴포넌트에서 동일하게 사용되는 뷰에대한 관심사를 가진 기능 툴팁은 대표적인 디렉티브의 대상, 마우스오버하면 설명이 뜬다 todolist를 가져온다, 삭제한다같은 기능은 특정 컴포넌트에서만 쓰지 않고 이곳저곳에서 사용할 확률이높다. 서비스는 싱글톤으로 만들어">
+    
+
+    
+        <link rel="alternate" href="/" title="terry kim blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Terry&#39;s record</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">홈</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/">Programming</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Daily-Records/">Daily Records</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Programming/Notes/">Notes</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/">Sports</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Sports/Baseball/">Baseball</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/">일상</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/일상/메모/">메모</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="검색" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '포스트',
+            PAGES: 'Pages',
+            CATEGORIES: '카테고리',
+            TAGS: '태그',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Programming/Notes/">Notes</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-3-20note" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        3.20note
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/04/30/3-20note/" class="article-date">
+            <time datetime="2018-04-30T07:14:31.000Z" itemprop="datePublished">2018-04-30</time>
+        </a>
+    </div>
+
+                
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <ul>
+<li>ngFor directive도 원래는 클래스라서 클래스명은 대문자다</li>
+<li>디렉티브 만드는 이유 : 여러개 컴포넌트에서 동일하게 사용되는 뷰에대한 관심사를 가진 기능</li>
+<li>툴팁은 대표적인 디렉티브의 대상, 마우스오버하면 설명이 뜬다</li>
+<li>todolist를 가져온다, 삭제한다같은 기능은 특정 컴포넌트에서만 쓰지 않고 이곳저곳에서 사용할 확률이높다.</li>
+<li>서비스는 싱글톤으로 만들어지는 클래스 / 어플전역에서 단하나만 존재하는 인스턴스 / 우리가 만드는게 아니고 프레임워크가 만드는데 이걸 제어권역전이라한다</li>
+<li>인스턴스를 컴포넌트가 생성하지 않는다. (생성하면 긴밀한 결합이 된다. 그래서 안함)</li>
+<li>컴포넌트가 서비스를 적게 알기 위해 dependency injection을 쓴다.</li>
+<li>di, ioc같은 패턴이 앵귤라에 녹아있다.</li>
+<li>일단은 프레임워크가 지향하는바를 이해하자</li>
+<li>@Injectable은 뒤에 메타데이터가 없어서 사실 없어도 되지만 붙이는게 약속이다.</li>
+<li>서비스 인스턴스를 new로 만들면 생기는 문제<br>언제든지 컴포넌트는 바뀐다. 서비스도 바뀐다. 서비스를 대체하자고 했을 때 컴포넌트(서비스를 사용하고자하는 애)도 로직이 바껴야된다. 안티패턴이다.</li>
+<li>객체를 생성하는 방법은 여러개, </li>
+<li>서비스를 사용하는 컴포넌트는 서비스에 의존한다.</li>
+<li>프레임워크는 어플 전체를 아우른다, 프레임워크라서 DI가 가능하다 라이브러리는 기능을 구현하는거뿐, </li>
+<li>서비스는 컴포넌트에 등록할수도있고 모듈에도등록이되서 자동적용안해준다.</li>
+<li>app.module에 사용하는 프로바이더는 어플 전역에서 사용</li>
+<li>컴포 프로바이더는 컴포넌트의 자식컴포넌트에서만 유효하다</li>
+<li>공유 서비스의 인스턴스는 어플리케이션 내에 단 하나만 있어야한다. (싱글톤)</li>
+<li>모듈내에서 프로바이더 설정을 했을때 싱글톤을 지원해준다</li>
+<li>IoC 제어권역전<br>인스턴스는 원래 사용자가 만드는데, 의존관계상의 결합이 긴밀하게 발생한다.<br>느슨한 결합을 위해서 프레임워크에게 위임</li>
+<li>하나의 인스턴스는 여러개의 타입을 가질 수 있다.<br>C는 P 클래스를 상속하면 C는 P,C타입 전부 해당</li>
+<li>promise, async, awit, generator 다 껄적지근</li>
+<li>배열, return : 동기<br>ajax통신결과, event: 비동기<br>input이 어떤거냐에따라 로직이 크게 바뀐다.<br>동기가됐건 비동기가됐건 일관되게 데이터 처리를 하고 싶다.</li>
+<li>시간축의 입장에서는 배열, event, ajax 다 순서를 가진 데이타 스트림이다.(배열과 유사한 애들이다)<br>input =&gt; ===== =&gt; output<br>모든 input데이타는 데이타스트림이다.<br>맵, 필터, 리듀스 써서 처리할 수 있다.(고차함수 비슷하게 체이닝방식에 의해서 코딩할 수 있다.)</li>
+<li>reactivex<br>rxjava, rxswift, rxjs,<br>모든 인풋 데이터를 배열처럼 쓰고싶은거다<br>옵저버블, 옵저버, 오퍼레이터, 서브젝트, 비헤이비어서브젝트<br>옵저버블 : 관측할수있는!<br>모든 인풋데이타를 옵저버블로 처리한다.<br>그리고 그걸관찰하는 옵저버가있다<br>배열도 변한다 그걸 감시하는애가 옵저버<br>새로운 클릭이벤트가 추가된다<br>리스폰스도 추가된다.<br>이벤트처리와 비슷하다.<br>옵저버 패턴을 조금 고도화시킨게 리액티브패턴<br>Observable.from(this.myArray)<br>from이 오퍼레이터<br>여러옵저버들이 하나의 옵저버블을 관측할수있다.</li>
+</ul>
+<p>put, patch의 차이<br>put은 전체갱신,<br>patch는 일부갱신, </p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://chamchii.github.io/2018/04/30/3-20note/" data-id="cjglwwze2001wfizf8vdsctir" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>팔로우:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/04/30/3-26note/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">새로운</strong>
+        <p class="article-nav-title">
+        
+            3.26note
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/04/30/3-15note/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">오래된</strong>
+        <p class="article-nav-title">3-15note</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">최근 글</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-27note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-27note/" class="title">3.27note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:18:06.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-26note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-26note/" class="title">3.26note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:15:07.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-20note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
+                            <p class="item-title"><a href="/2018/04/30/3-20note/" class="title">3.20note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:14:31.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-15note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-15note/" class="title">3-15note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:02:17.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/30/3-13note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/30/3-13note/" class="title">3-13note</a></p>
+                            <p class="item-date"><time datetime="2018-04-30T07:00:47.000Z" itemprop="datePublished">2018-04-30</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">카테고리</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">34</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Daily-Records/">Daily Records</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Notes/">Notes</a><span class="category-list-count">32</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/일상/">일상</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/일상/메모/">메모</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">아카이브</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2월 2018</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">링크</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 terry</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://chamchii.github.io/2018/04/30/3-20note/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
