@@ -9,17 +9,17 @@
     
         <meta name="keywords" content="" />
     
-    <meta name="description" content="commonjs는 nodejs가 사용 : keyword : require, module.exportsAMD : require, defineES2015: import, export웹팩을 전역에 깔아서 쓰면프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다뭔가 더 있다는 얘기babel-loader: teaches">
+    <meta name="description" content="Webpack 강의 노트commonjs는 nodejs가 사용 : keyword : require, module.exportsAMD : require, defineES2015: import, export웹팩을 전역에 깔아서 쓰면프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다뭔가 더 있다는 얘기babel-lo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="5-1 note">
 <meta property="og:url" content="https://chamchii.github.io/2018/05/01/5-1-note/index.html">
 <meta property="og:site_name" content="terry kim blog">
-<meta property="og:description" content="commonjs는 nodejs가 사용 : keyword : require, module.exportsAMD : require, defineES2015: import, export웹팩을 전역에 깔아서 쓰면프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다뭔가 더 있다는 얘기babel-loader: teaches">
+<meta property="og:description" content="Webpack 강의 노트commonjs는 nodejs가 사용 : keyword : require, module.exportsAMD : require, defineES2015: import, export웹팩을 전역에 깔아서 쓰면프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다뭔가 더 있다는 얘기babel-lo">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2018-05-02T06:48:55.082Z">
+<meta property="og:updated_time" content="2018-05-27T13:29:30.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5-1 note">
-<meta name="twitter:description" content="commonjs는 nodejs가 사용 : keyword : require, module.exportsAMD : require, defineES2015: import, export웹팩을 전역에 깔아서 쓰면프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다뭔가 더 있다는 얘기babel-loader: teaches">
+<meta name="twitter:description" content="Webpack 강의 노트commonjs는 nodejs가 사용 : keyword : require, module.exportsAMD : require, defineES2015: import, export웹팩을 전역에 깔아서 쓰면프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다뭔가 더 있다는 얘기babel-lo">
     
 
     
@@ -163,7 +163,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>commonjs는 nodejs가 사용 : keyword : require, module.exports<br>AMD : require, define<br>ES2015: import, export<br>웹팩을 전역에 깔아서 쓰면<br>프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.<br>합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다<br>뭔가 더 있다는 얘기<br>babel-loader: teaches babel how to work with webpack (compatibility layer)<br>webpack말고도 빌드 시스템이 많은데 바벨은 그걸 다 지원한다.<br>하나의 라이브러리에 모든 빌드 시스템의 지원방법이 다 들어가는게 아니고, 라이브러리를 다 쪼개놈<br>babel-core: knows how to take in code, parse it, and generate some output files<br>바벨 코어는 사실 하는게 없다. es6를 es5로 바꾸는걸 모른다.<br>babel-preset-env : Ruleset for telling babel exactly what pieces of ES2015/6/7 syntax to look for, and how to turn it into ES5 code<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./image_viewer'</span>;</span><br><span class="line"><span class="comment">// 이렇게 import하면 그냥 코드가 실행된다.</span></span><br></pre></td></tr></table></figure></p>
+            <h3 id="Webpack-강의-노트"><a href="#Webpack-강의-노트" class="headerlink" title="Webpack 강의 노트"></a>Webpack 강의 노트</h3><p>commonjs는 nodejs가 사용 : keyword : require, module.exports<br>AMD : require, define<br>ES2015: import, export<br>웹팩을 전역에 깔아서 쓰면<br>프로젝트마다 웹팩 버전이 다를 때 맞추는게 번거롭다.<br>합쳐질 파일들의 용량보다 번들 용량이 훨씬 크다<br>뭔가 더 있다는 얘기<br>babel-loader: teaches babel how to work with webpack (compatibility layer)<br>webpack말고도 빌드 시스템이 많은데 바벨은 그걸 다 지원한다.<br>하나의 라이브러리에 모든 빌드 시스템의 지원방법이 다 들어가는게 아니고, 라이브러리를 다 쪼개놈<br>babel-core: knows how to take in code, parse it, and generate some output files<br>바벨 코어는 사실 하는게 없다. es6를 es5로 바꾸는걸 모른다.<br>babel-preset-env : Ruleset for telling babel exactly what pieces of ES2015/6/7 syntax to look for, and how to turn it into ES5 code<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'./image_viewer'</span>;</span><br><span class="line"><span class="comment">// 이렇게 import하면 그냥 코드가 실행된다.</span></span><br></pre></td></tr></table></figure></p>
 <p>css-loader: teach webpack how to import and parse css files<br>bundle.js로 raw text를 삽입한다.</p>
 <p>style-loader: html에 style태그 만들어준다(이런 코드가 bundle.js에 있다)<br>style-loader<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  use: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]</span><br><span class="line">&#125;</span><br><span class="line">  <span class="comment">//오른쪽에서 왼쪽 순서로 불린다.</span></span><br></pre></td></tr></table></figure></p>
 <p>js파일이 css를 import하면<br>css-loader가 css가 import됐다는걸 알아차리고<br>그 내용을 bundle.js에 갖다넣는다<br>그리고 style-loader가 html에 넣어준다</p>
@@ -175,7 +175,7 @@
 
 
 
-    <a data-url="https://chamchii.github.io/2018/05/01/5-1-note/" data-id="cjhouip2s002frhzfmyk1ef0d" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
+    <a data-url="https://chamchii.github.io/2018/05/01/5-1-note/" data-id="cjhrnu1c0002fcwzf04br1w39" class="article-share-link"><i class="fa fa-share"></i>공유하기</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -325,7 +325,7 @@
     
         <a href="/2018/04/30/4-30-note/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">오래된</strong>
-        <p class="article-nav-title">4-30 note</p>
+        <p class="article-nav-title">4/30 note</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -340,6 +340,26 @@
         <h3 class="widget-title">최근 글</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/29/5-29-note/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
+                            <p class="item-title"><a href="/2018/05/29/5-29-note/" class="title">5-29 note</a></p>
+                            <p class="item-date"><time datetime="2018-05-29T12:28:13.000Z" itemprop="datePublished">2018-05-29</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -421,26 +441,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/05/01/5-1-note/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Notes/">Notes</a></p>
-                            <p class="item-title"><a href="/2018/05/01/5-1-note/" class="title">5-1 note</a></p>
-                            <p class="item-date"><time datetime="2018-05-01T06:53:32.000Z" itemprop="datePublished">2018-05-01</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -450,7 +450,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">카테고리</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily-Records/">Daily Records</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Notes/">Notes</a><span class="category-list-count">42</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/일상/">일상</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/일상/메모/">메모</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Daily-Records/">Daily Records</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">43</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Notes/">Notes</a><span class="category-list-count">43</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/">Sports</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Sports/Baseball/">Baseball</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/일상/">일상</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/일상/메모/">메모</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -460,7 +460,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">아카이브</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2월 2018</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">5월 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">4월 2018</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">3월 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">2월 2018</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">1월 2018</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
